@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(51, 150, 200), rgb(255, 220, 220));
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        form {
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        p {
+            font-size: 20px;
+            display: inline;
+        }
+
+        .inp {
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        #name {
+            margin-left: 250px;
+        }
+
+        #age {
+            margin-left: 265px;
+        }
+
+        #cho {
+            margin-left: 95px;
+        }
+
+        #diabp {
+            margin-left: 85px;
+        }
+
+        #hrt {
+            margin-left: 85px;
+        }
+
+        #male {
+            margin-left: 325px;
+            height: 20px;
+            width: 20px;
+        }
+
+        #hs_yes {
+            margin-left: 100px;
+            height: 20px;
+            width: 20px;
+        }
+
+        #sm_yes {
+            margin-left: 180px;
+            height: 20px;
+            width: 20px;
+        }
+
+        #bmi {
+            width: 280px;
+            margin-left: 60px;
+        }
+
+        #sysbp {
+            margin-left: 165px;
+            width: 280px;
+        }
+
+        #bp_yes {
+            margin-left: 75px;
+            height: 20px;
+            width: 20px;
+        }
+
+        #dia_yes {
+            margin-left: 200px;
+            height: 20px;
+            width: 20px;
+        }
+
+        #dia {
+            width: 280px;
+            margin-left: 12px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        header {
+            margin-left: 500px;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+
+        button {
+            height: 40px;
+            width: 150px;
+            border-radius: 5px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            background-image: linear-gradient(to right, rgb(255, 220, 220), rgb(51, 150, 200));
+            color: rgb(4, 104, 154);
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        please provide your Information
+    </header>
+    <form action="/predict">
+        <div class="name">
+            <p>Name:</p>
+            <input type="text" id="name" class="inp">
+        </div>
+        <div class="gender">
+            <p>Gender:</p>
+            <input type="radio" id="male" name="gender" value="1">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="0" style="height: 20px; width: 20px;">
+            <label for="female">Female</label>
+        </div>
+        <div class="age">
+            <p>Age:</p>
+            <input type="number" id="age" min="32" max="70" class="inp">
+        </div>
+        <div class="sm_status">
+            <p>Current Smoking Status:</p>
+            <input type="radio" id="sm_yes" name="sm" value="1">
+            <label for="sm_yes">Yes</label>
+            <input type="radio" id="sm_no" name="sm" value="0" style="height: 20px; width: 20px;">
+            <label for="sm_no">No</label>
+        </div>
+        <div class="bp_status">
+            <p>Are you currently taking any sort<br> of medication for Blood pressure:</p>
+            <input type="radio" id="bp_yes" name="bp" value="1">
+            <label for="sm_yes">Yes</label>
+            <input type="radio" id="bp_no" name="bp" value="0" style="height: 20px; width: 20px;">
+            <label for="sm_yes">No</label>
+        </div>
+        <div class="hs_status">
+            <p>Have you ever faced Heart Stroke:</p>
+            <input type="radio" id="hs_yes" name="hs" value="1">
+            <label for="hs_yes">Yes</label>
+            <input type="radio" id="hs_no" name="hs" value="0" style="height: 20px; width: 20px;">
+            <label for="hs_yes">No</label>
+        </div>
+        <div class="dia">
+            <p>Are you a Diabetic:</p>
+            <input type="radio" id="dia_yes" name="dia" value="1">
+            <label for="sm_yes">Yes</label>
+            <input type="radio" id="dia_no" name="dia" value="0" style="height: 20px; width: 20px;">
+            <label for="sm_yes">No</label>
+        </div>
+        <div class="dia_lev">
+            <p>What are your fasting Blood Sugar levels:</p>
+            <input type="number" id="dia" min="70" class="inp">
+        </div>
+        <div class="chol">
+            <p>What is your Cholestrol:</p>
+            <input type="number" id="cho" class="inp">
+        </div>
+        <div class="sys_bp">
+            <p>Systolic BloodPressure:</p>
+            <input type="number" id="sysbp" min="70" class="inp">
+        </div>
+        <div class="dia_bp">
+            <p>Diastolic BloodPressure:</p>
+            <input type="number" id="diabp" min="70" class="inp">
+        </div>
+        <div class="bmi">
+            <p>What is your Body Mass Index(BMI):</p>
+            <input type="number" id="bmi" class="inp"><br>
+        </div>
+        <div class="hrt">
+            <p>What is your heart Rate:</p>
+            <input type="number" id="hrt" class="inp">
+        </div>
+        <center>
+        <button type="submit">Submit</button>
+        </center>
+    </form>
+    
+</body>
+
+</html>
